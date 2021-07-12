@@ -135,9 +135,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void encoder_update(bool clockwise) {
-}
-
 void dip_update(uint8_t index, bool active) {
 }
 
