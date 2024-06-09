@@ -13,9 +13,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <stdio.h>
-#include "quantum.h"
+
 #include "oled_display.h"
+#include "keycodes.h"
+#include "progmem.h"
+#include "host.h"
+#include "timer.h"
+#include "wpm.h"
+#include "rgblight.h"
+#include "oled_driver.h"
 
 static const char PROGMEM oled_mode_messages[5][15] = {
     "",
@@ -62,11 +68,14 @@ void process_record_keymap_oled(uint16_t keycode) {
 }
 
 void render_wpm(void) {
-    char wpm_str[10];
-
-    sprintf(wpm_str, "%03d", get_current_wpm());
+    uint8_t n = get_current_wpm();
+    char wpm_counter[4];
+    wpm_counter[3] = '\0';
+    wpm_counter[2] = '0' + n % 10;
+    wpm_counter[1] = '0' + (n /= 10) % 10;
+    wpm_counter[0] = '0' + n / 10 ;
     oled_write_P(PSTR("                 "), false);
-    oled_write(wpm_str, false);
+    oled_write(wpm_counter, false);
 }
 
 void render_idle(void) {
