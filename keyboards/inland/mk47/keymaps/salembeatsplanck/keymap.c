@@ -126,3 +126,81 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   }
   return true;
 }
+
+bool rgb_matrix_indicators_advanced_user(uint8_t led_min, uint8_t led_max) {
+    for (uint8_t i = led_min; i < led_max; i++) {
+        switch(get_highest_layer(layer_state|default_layer_state)) {
+
+            default:
+                if(i == 0ll
+                ) {
+                    rgb_matrix_set_color(i, RGB_BLACK);
+                }
+                else {
+                    rgb_matrix_set_color(i, RGB_BLACK);
+                }
+            break;
+
+            case NAV_LAYER:
+                if(i == 0) {
+                    rgb_matrix_set_color(i, RGB_WHITE);
+                }
+                else {
+                    if(i >= 18 && i <= 21) {
+                        rgb_matrix_set_color(i, RGB_GREEN);
+                    }
+                    else {
+                        rgb_matrix_set_color(i, RGB_BLACK);
+                    }
+                }
+            break;
+
+            case 0:
+                if(i == 0) {
+                    rgb_matrix_set_color(i, RGB_WHITE);
+                }
+                else {
+                    rgb_matrix_set_color(i, RGB_BLACK);
+                }
+            break;
+
+            case 1:
+                if(i == 0) {
+                    rgb_matrix_set_color(i, RGB_RED);
+                }
+                else {
+                    rgb_matrix_set_color(i, RGB_BLACK);
+                }
+            break;
+
+            case 2:
+                if(i == 0) {
+                    rgb_matrix_set_color(i, RGB_GREEN);
+                }
+                else {
+                    rgb_matrix_set_color(i, RGB_BLACK);
+                }
+            break;
+
+            case 3:
+                if(i == 0) {
+                    rgb_matrix_set_color(i, RGB_BLUE);
+                }
+                else {
+                    rgb_matrix_set_color(i, RGB_BLACK);
+                }
+            break;
+
+            case 4:
+                if(i == 0) {
+                    rgb_matrix_set_color(i, RGB_YELLOW);
+                }
+                else {
+                    rgb_matrix_set_color(i, RGB_BLACK);
+                }
+            break;
+
+        }
+    }
+    return false;
+}
