@@ -12,9 +12,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*Layer 0*/
     [0] = LAYOUT(
         L_CYC,
-        KC_F13, KC_F14, KC_F15, KC_F16,
+        LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F20),
         KC_F17, KC_F18, KC_F19, KC_F20,
-        KC_F21, KC_F22, KC_F23, KC_F24
+        LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LGUI(KC_F20)
         ),
 
 /*Layer 1*/
