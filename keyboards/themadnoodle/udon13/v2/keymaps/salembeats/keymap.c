@@ -11,15 +11,15 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /*Layer 0*/
     [0] = LAYOUT(
-        KC_MUTE,
-        KC_MPLY, KC_MPRV, KC_MNXT, KC_MSEL, 
-        C(KC_Z), KC_CALC, KC_MAIL, KC_MYCM, 
-        C(KC_C), C(KC_X), C(KC_V), L_CYC
+        L_CYC,
+        KC_F13, KC_F14, KC_F15, KC_F16,
+        KC_F17, KC_F18, KC_F19, KC_F20,
+        KC_F21, KC_F22, KC_F23, KC_F24
         ),
 
 /*Layer 1*/
     [1] = LAYOUT(
-        RGB_TOG, 
+        L_CYC,
         RGB_SAD, RGB_SAI, RGB_HUD, RGB_HUI, 
         RGB_MOD, RGB_RMOD, RGB_M_P, RGB_M_B, 
         RGB_M_SW, RGB_SPD, RGB_SPI, L_CYC
@@ -27,7 +27,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*Layer 2*/ 
     [2] = LAYOUT(
-        KC_NO, 
+        L_CYC,
         KC_NO, KC_NO, KC_NO, KC_NO, 
         KC_NO, KC_NO, KC_NO, KC_NO, 
         KC_NO, KC_NO, KC_NO, L_CYC
@@ -35,7 +35,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /*Layer 3*/       
     [3] = LAYOUT(
-        KC_NO, 
+        L_CYC,
         TO(0), TO(1), TO(2), KC_NO, 
         KC_NO, KC_NO, KC_NO, L_IND, 
         LT(0,KC_PWR), LT(1, KC_SLEP), LT(2, KC_WAKE), L_CYC
