@@ -12,33 +12,33 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 /* Layer 0 */
     [0] = LAYOUT(
         L_CYC,
-        LCTL(KC_F17), LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F20),
-        KC_F17, KC_F18, KC_F19, KC_F20,
-        LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F20)
+        LCTL(KC_F17), LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F13),
+        KC_F17, KC_F18, KC_F19, KC_F13,
+        LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F13)
     ),
 
 /* Layer 1 */
     [1] = LAYOUT(
         L_CYC,
-        LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LGUI(KC_F20),
-        LCA(KC_F17), LCA(KC_F18), LCA(KC_F19), LCA(KC_F20),
-        LSA(KC_F17), LSA(KC_F18), LSA(KC_F19), LSA(KC_F20)
+        LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LGUI(KC_F13),
+        LCA(KC_F17), LCA(KC_F18), LCA(KC_F19), LCA(KC_F13),
+        LSA(KC_F17), LSA(KC_F18), LSA(KC_F19), LSA(KC_F13)
     ),
 
 /* Layer 2 */
     [2] = LAYOUT(
         L_CYC,
-        LAG(KC_F17), LAG(KC_F18), LAG(KC_F19), LAG(KC_F20),
-        LCAG(KC_F17), LCAG(KC_F18), LCAG(KC_F19), LCAG(KC_F20),
-        MEH(KC_F17), MEH(KC_F18), MEH(KC_F19), MEH(KC_F20)
+        LAG(KC_F17), LAG(KC_F18), LAG(KC_F19), LAG(KC_F13),
+        LCAG(KC_F17), LCAG(KC_F18), LCAG(KC_F19), LCAG(KC_F13),
+        MEH(KC_F17), MEH(KC_F18), MEH(KC_F19), MEH(KC_F13)
     ),
 
 /* Layer 3 */
     [3] = LAYOUT(
         L_CYC,
-        HYPR(KC_F17), HYPR(KC_F18), HYPR(KC_F19), HYPR(KC_F20),
-        LSFT(KC_F17), LSFT(KC_F18), LSFT(KC_F19), LSFT(KC_F20),
-        LCTL(KC_F17), LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F20)
+        HYPR(KC_F17), HYPR(KC_F18), HYPR(KC_F19), HYPR(KC_F13),
+        LSFT(KC_F17), LSFT(KC_F18), LSFT(KC_F19), LSFT(KC_F13),
+        LCTL(KC_F17), LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F13)
     )
 };
 
