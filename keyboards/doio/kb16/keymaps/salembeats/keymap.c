@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
     _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
     LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F13),   _______,        // Second row + top-right knob press (unused)
-    KC_F17,         KC_F18,         KC_F19,         KC_F20,         TO(1),          // Third row + large knob press (translated)
+    KC_F17,         KC_F18,         KC_F19,         KC_F13,         TO(1),          // Third row + large knob press (translated)
     LALT(KC_F17),   LALT(KC_F18),   LALT(KC_F19),   LALT(KC_F13)                     // Fourth row (correctly mapped)
 ),
     [1] = LAYOUT(
