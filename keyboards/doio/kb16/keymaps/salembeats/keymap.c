@@ -37,27 +37,27 @@ enum layer_names {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
     _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
-    LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F20),   _______,        // Second row + top-right knob press (unused)
+    LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F13),   _______,        // Second row + top-right knob press (unused)
     KC_F17,         KC_F18,         KC_F19,         KC_F20,         TO(1),          // Third row + large knob press (translated)
-    LALT(KC_F17),   LALT(KC_F18),   LALT(KC_F19),   LALT(KC_F20)                     // Fourth row (correctly mapped)
+    LALT(KC_F17),   LALT(KC_F18),   LALT(KC_F19),   LALT(KC_F13)                     // Fourth row (correctly mapped)
 ),
     [1] = LAYOUT(
     _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
-    LGUI(KC_F17),   LGUI(KC_F18),   LGUI(KC_F19),   LGUI(KC_F20),   _______,        // Second row + top-right knob press (unused)
-    LCA(KC_F17),    LCA(KC_F18),    LCA(KC_F19),    LCA(KC_F20),    TO(2),          // Third row + large knob press (translated)
-    LSA(KC_F17),    LSA(KC_F18),    LSA(KC_F19),    LSA(KC_F20)                     // Fourth row (correctly mapped)
+    LGUI(KC_F17),   LGUI(KC_F18),   LGUI(KC_F19),   LGUI(KC_F13),   _______,        // Second row + top-right knob press (unused)
+    LCA(KC_F17),    LCA(KC_F18),    LCA(KC_F19),    LCA(KC_F13),    TO(2),          // Third row + large knob press (translated)
+    LSA(KC_F17),    LSA(KC_F18),    LSA(KC_F19),    LSA(KC_F13)                     // Fourth row (correctly mapped)
 ),
     [2] = LAYOUT(
     _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
-    LAG(KC_F17),    LAG(KC_F18),    LAG(KC_F19),    LAG(KC_F20),    _______,        // Second row + top-right knob press (unused)
-    LCAG(KC_F17),   LCAG(KC_F18),   LCAG(KC_F19),   LCAG(KC_F20),   TO(3),          // Third row + large knob press (translated)
-    MEH(KC_F17),    MEH(KC_F18),    MEH(KC_F19),    MEH(KC_F20)                     // Fourth row (correctly mapped)
+    LAG(KC_F17),    LAG(KC_F18),    LAG(KC_F19),    LAG(KC_F13),    _______,        // Second row + top-right knob press (unused)
+    LCAG(KC_F17),   LCAG(KC_F18),   LCAG(KC_F19),   LCAG(KC_F13),   TO(3),          // Third row + large knob press (translated)
+    MEH(KC_F17),    MEH(KC_F18),    MEH(KC_F19),    MEH(KC_F13)                     // Fourth row (correctly mapped)
 ),
     [3] = LAYOUT(
     _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
-    HYPR(KC_F17),   HYPR(KC_F18),   HYPR(KC_F19),   HYPR(KC_F20),   _______,        // Second row + top-right knob press (unused)
-    LSFT(KC_F17),   LSFT(KC_F18),   LSFT(KC_F19),   LSFT(KC_F20),   TO(0),          // Third row + large knob press (translated)
-    LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F20)                     // Fourth row (correctly mapped)
+    HYPR(KC_F17),   HYPR(KC_F18),   HYPR(KC_F19),   HYPR(KC_F13),   _______,        // Second row + top-right knob press (unused)
+    LSFT(KC_F17),   LSFT(KC_F18),   LSFT(KC_F19),   LSFT(KC_F13),   TO(0),          // Third row + large knob press (translated)
+    LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F13)                     // Fourth row (correctly mapped)
 ),
 /*
        ┌───┬───┬───┬───┐   ┌───┐ ┌───┐
