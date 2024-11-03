@@ -178,15 +178,15 @@ void switch_to_csgo_layer(void) {
     play_csgo_tone();
 }
 
-void switch_to_qwerty_layer(void) {
-    layer_move(_QWERTY);
+void switch_off_csgo_layer(void) {
+    layer_off(COUNTER_STRIKE_LAYER);
     play_qwerty_tone();
 }
 
 // Function to check the magic word
 void check_magic_word(void) {
     if (strncmp(key_buffer, magic_word_leave_csgo, MAGIC_LENGTH) == 0 && layer_state_is(COUNTER_STRIKE_LAYER)) {
-        switch_to_qwerty_layer();
+        switch_off_csgo_layer();
         buffer_index = 0;
     }
     if (strncmp(key_buffer, magic_word_start_csgo, MAGIC_LENGTH) == 0 && !layer_state_is(COUNTER_STRIKE_LAYER)) {
@@ -210,7 +210,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           buffer_index = 0;
       }
   }
-  return true;
   switch (keycode) {
     case QWERTY:
       if (record->event.pressed) {
