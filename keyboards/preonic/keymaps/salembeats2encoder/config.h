@@ -35,3 +35,4 @@
 
 #define ENCODER_A_PINS { B12 }
 #define ENCODER_B_PINS { B13 }
+#define ENCODER_DIRECTION_FLIP
