@@ -19,13 +19,14 @@
 
 // Define the custom QWERTY tone array
 float custom_qwerty_sound[][2] = {
-    { NOTE_C4, 20 }, { NOTE_E4, 20 }
+    { NOTE_F6, 10 }
 };
 
-// Define the CSGO theme tone array
+
+// Refined version of the CSGO theme (approximation)
 float csgo_theme[][2] = {
-    { NOTE_G4, 16 }, { NOTE_A4, 16 }, { NOTE_B4, 16 }, { NOTE_D5, 16 },
-    { NOTE_E5, 16 }, { NOTE_D5, 16 }, { NOTE_B4, 16 }, { NOTE_A4, 16 }
+    { NOTE_DS4, 20 }, { NOTE_AS4, 20 }, { NOTE_B4, 20 }, { NOTE_AS4, 20 },
+    { NOTE_DS4, 20 }, { NOTE_AS4, 20 }, { NOTE_B4, 20 }, { NOTE_AS4, 20 }
 };
 
 void play_qwerty_tone(void) {
