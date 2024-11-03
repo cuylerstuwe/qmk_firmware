@@ -37,10 +37,6 @@ void play_csgo_tone(void) {
     PLAY_SONG(csgo_theme);
 }
 
-// Variables for tracking triple-tap on F1
-static uint16_t f1_triple_tap_timer;
-static uint8_t f1_tap_count = 0;
-
 enum preonic_layers {
   _QWERTY,
   _LEFT_LOWER,
@@ -165,46 +161,57 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     return state;
 }
 
+#define MAGIC_LENGTH 4
+
+// Define the magic word and its length
+const char magic_word_leave_csgo[] = "exit";
+
+// Define the magic word and its length
+const char magic_word_start_csgo[] = "csgo";
+
+// Buffer to store recent keypresses
+char key_buffer[MAGIC_LENGTH];
+uint8_t buffer_index = 0;
+
+void switch_to_csgo_layer(void) {
+    layer_on(COUNTER_STRIKE_LAYER);
+    play_csgo_tone();
+}
+
+void switch_to_qwerty_layer(void) {
+    layer_move(_QWERTY);
+    play_qwerty_tone();
+}
+
+// Function to check the magic word
+void check_magic_word(void) {
+    if (strncmp(key_buffer, magic_word_leave_csgo, MAGIC_LENGTH) == 0 && layer_state_is(COUNTER_STRIKE_LAYER)) {
+        switch_to_qwerty_layer();
+        buffer_index = 0;
+    }
+    if (strncmp(key_buffer, magic_word_start_csgo, MAGIC_LENGTH) == 0 && !layer_state_is(COUNTER_STRIKE_LAYER)) {
+        switch_to_csgo_layer();
+        buffer_index = 0;
+    }
+}
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (record->event.pressed) {
+      // Check if the key is a letter and add it to the buffer if it is
+      if (keycode >= KC_A && keycode <= KC_Z) {
+          char letter = (char)(keycode - KC_A + 'a');
+          key_buffer[buffer_index] = letter;
+          buffer_index = (buffer_index + 1) % MAGIC_LENGTH;
+
+          // Check for the magic word
+          check_magic_word();
+      } else {
+          // Reset the buffer if a non-letter key is pressed
+          buffer_index = 0;
+      }
+  }
+  return true;
   switch (keycode) {
-    case KC_F1:
-    case KC_ESC:
-        if (record->event.pressed) {
-            // Check if the timer has expired
-            if (timer_elapsed(f1_triple_tap_timer) > TAPPING_TERM) {
-                // Reset tap count if timer has expired
-                f1_tap_count = 0;
-            }
-
-            // Start or restart the timer
-            f1_triple_tap_timer = timer_read();
-
-            // Increment the tap count
-            f1_tap_count++;
-
-            // Check if it's the third tap
-            if (f1_tap_count == 3) {
-                // Reset tap count
-                f1_tap_count = 0;
-
-                // Toggle layers based on the current layer
-                if (layer_state_is(COUNTER_STRIKE_LAYER)) {
-                    // Switch to QWERTY if on Counter Strike
-                    // layer_move(_QWERTY);
-                    layer_move(_QWERTY);
-                    play_qwerty_tone();
-                } else {
-                    // Switch to Counter Strike if on QWERTY or any other layer
-                    layer_on(COUNTER_STRIKE_LAYER);
-                    play_csgo_tone();
-                }
-
-                return false; // Skip further processing of this keypress
-            }
-
-            return true;
-        }
-        break;
     case QWERTY:
       if (record->event.pressed) {
         set_single_persistent_default_layer(_QWERTY);
