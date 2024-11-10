@@ -148,7 +148,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 void dip_update(uint8_t index, bool active) {
 }
 
+void matrix_init_user(void) {
+    rgblight_setrgb(0, 0, 0); // Adjust RGB values as needed, e.g., (0, 255, 0) for green
+}
 void matrix_scan_user(void) {
+    rgblight_setrgb(0, 0, 0); // Continuously sets RGB values to off
 }
 
 bool music_mask_user(uint16_t keycode) {
@@ -161,4 +165,3 @@ bool music_mask_user(uint16_t keycode) {
     default:
       return true;
   }
-}
