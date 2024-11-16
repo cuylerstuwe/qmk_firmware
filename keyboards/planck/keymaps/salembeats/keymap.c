@@ -15,7 +15,6 @@
  */
 
 #include QMK_KEYBOARD_H
-#include "muse.h"
 
 extern keymap_config_t keymap_config;
 
@@ -154,14 +153,3 @@ void matrix_init_user(void) {
 void matrix_scan_user(void) {
     rgblight_setrgb(0, 0, 0); // Continuously sets RGB values to off
 }
-
-bool music_mask_user(uint16_t keycode) {
-  switch (keycode) {
-    case LEFT_LOWER:
-    case RIGHT_LOWER:
-    case LEFT_RAISE:
-    case RIGHT_RAISE:
-      return false;
-    default:
-      return true;
-  }
