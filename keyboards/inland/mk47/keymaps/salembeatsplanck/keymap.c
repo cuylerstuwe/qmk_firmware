@@ -65,17 +65,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_LEFT_RAISE] = LAYOUT_planck_mit(
-        _______,      _______,      _______,      _______,      _______,      _______,     _______,     _______,     _______,      _______,      _______,      _______,
-        _______,      _______,      LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LSA(KC_F17), LSA(KC_F18), LCA(KC_F17), LCA(KC_F18),  LCA(KC_F19),  _______,      _______,
-        LCTL(KC_F17), LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F13), KC_F17,       KC_F18,      KC_F19,      KC_F13,      LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F13),
-        _______,      _______,      _______,      _______,      _______,     _______,     _______,     _______,      _______,      _______,      _______
+    _______,       _______,      LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LSFT(KC_F17), LSFT(KC_F18), LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), _______,      _______,
+    _______,       LSA(KC_F17),  LCA(KC_F17),  LCA(KC_F18),  LCA(KC_F19),  LSFT(KC_F19), LSFT(KC_F13), LCA(KC_F17),  LCA(KC_F18),  LCA(KC_F19),  LSA(KC_F18),  _______,
+    LCTL(KC_F17),  LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F13), KC_F17,       KC_F18,       KC_F19,       KC_F13,       LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F13),
+    _______,       _______,      _______,      _______,      _______,           MEH(KC_F17),            _______,      _______,      _______,      _______,      _______
 ),
 
 [_RIGHT_RAISE] = LAYOUT_planck_mit(
-        _______,      _______,      _______,      _______,      _______,      _______,     _______,     _______,     _______,      _______,      _______,      _______,
-        _______,      _______,      LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LSA(KC_F17), LSA(KC_F18), LCA(KC_F17), LCA(KC_F18),  LCA(KC_F19),  _______,      _______,
-        LCTL(KC_F17), LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F13), KC_F17,       KC_F18,      KC_F19,      KC_F13,      LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F13),
-        _______,      _______,      _______,      _______,      _______,     _______,     _______,     _______,      _______,      _______,      _______
+    _______,       _______,      LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LSFT(KC_F17), LSFT(KC_F18), LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), _______,      _______,
+    _______,       LSA(KC_F17),  LCA(KC_F17),  LCA(KC_F18),  LCA(KC_F19),  LSFT(KC_F19), LSFT(KC_F13), LCA(KC_F17),  LCA(KC_F18),  LCA(KC_F19),  LSA(KC_F18),  _______,
+    LCTL(KC_F17),  LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F13), KC_F17,       KC_F18,       KC_F19,       KC_F13,       LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F13),
+    _______,       _______,      _______,      _______,      _______,           MEH(KC_F17),            _______,      _______,      _______,      _______,      _______
 ),
 
 [_DOUBLE_LOWER] = LAYOUT_planck_mit(
