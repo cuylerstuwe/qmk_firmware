@@ -13,7 +13,7 @@
 #define BLUE_COLOR 170, 255, 255
 
 // Time in ms to show the color (adjust as needed)
-#define COLOR_TIMEOUT 300
+#define COLOR_TIMEOUT 200
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(HYPR_A, HYPR_B, HYPR_C)
