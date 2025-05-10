@@ -36,28 +36,28 @@ enum layer_names {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [0] = LAYOUT(
-    _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
-    LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F13),   _______,        // Second row + top-right knob press (unused)
-    KC_F17,         KC_F18,         KC_F19,         KC_F13,         TO(1),          // Third row + large knob press (translated)
-    LALT(KC_F17),   LALT(KC_F18),   LALT(KC_F19),   LALT(KC_F13)                     // Fourth row (correctly mapped)
+    _______,        _______,        _______,        _______,        HYPR(KC_Z),     // First row + top-left knob press
+    LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F13),   HYPR(KC_U),     // Second row + top-right knob press
+    KC_F17,         KC_F18,         KC_F19,         KC_F13,         TO(1),          // Third row + large knob press
+    LALT(KC_F17),   LALT(KC_F18),   LALT(KC_F19),   LALT(KC_F13)                    // Fourth row
 ),
     [1] = LAYOUT(
-    _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
-    LGUI(KC_F17),   LGUI(KC_F18),   LGUI(KC_F19),   LGUI(KC_F13),   _______,        // Second row + top-right knob press (unused)
-    LCA(KC_F17),    LCA(KC_F18),    LCA(KC_F19),    LCA(KC_F13),    TO(2),          // Third row + large knob press (translated)
-    LSA(KC_F17),    LSA(KC_F18),    LSA(KC_F19),    LSA(KC_F13)                     // Fourth row (correctly mapped)
+    _______,        _______,        _______,        _______,        HYPR(KC_Z),     // First row + top-left knob press
+    LGUI(KC_F17),   LGUI(KC_F18),   LGUI(KC_F19),   LGUI(KC_F13),   HYPR(KC_U),     // Second row + top-right knob press
+    LCA(KC_F17),    LCA(KC_F18),    LCA(KC_F19),    LCA(KC_F13),    TO(2),          // Third row + large knob press
+    LSA(KC_F17),    LSA(KC_F18),    LSA(KC_F19),    LSA(KC_F13)                     // Fourth row
 ),
     [2] = LAYOUT(
-    _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
-    LAG(KC_F17),    LAG(KC_F18),    LAG(KC_F19),    LAG(KC_F13),    _______,        // Second row + top-right knob press (unused)
-    LCAG(KC_F17),   LCAG(KC_F18),   LCAG(KC_F19),   LCAG(KC_F13),   TO(3),          // Third row + large knob press (translated)
-    MEH(KC_F17),    MEH(KC_F18),    MEH(KC_F19),    MEH(KC_F13)                     // Fourth row (correctly mapped)
+    _______,        _______,        _______,        _______,        HYPR(KC_Z),     // First row + top-left knob press
+    LAG(KC_F17),    LAG(KC_F18),    LAG(KC_F19),    LAG(KC_F13),    HYPR(KC_U),     // Second row + top-right knob press
+    LCAG(KC_F17),   LCAG(KC_F18),   LCAG(KC_F19),   LCAG(KC_F13),   TO(3),          // Third row + large knob press
+    MEH(KC_F17),    MEH(KC_F18),    MEH(KC_F19),    MEH(KC_F13)                     // Fourth row
 ),
     [3] = LAYOUT(
-    _______,        _______,        _______,        _______,        _______,        // First row + top-left knob press (unused)
-    HYPR(KC_F17),   HYPR(KC_F18),   HYPR(KC_F19),   HYPR(KC_F13),   _______,        // Second row + top-right knob press (unused)
-    LSFT(KC_F17),   LSFT(KC_F18),   LSFT(KC_F19),   LSFT(KC_F13),   TO(0),          // Third row + large knob press (translated)
-    LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F13)                     // Fourth row (correctly mapped)
+    _______,        _______,        _______,        _______,        HYPR(KC_Z),     // First row + top-left knob press
+    HYPR(KC_F17),   HYPR(KC_F18),   HYPR(KC_F19),   HYPR(KC_F13),   HYPR(KC_U),     // Second row + top-right knob press
+    LSFT(KC_F17),   LSFT(KC_F18),   LSFT(KC_F19),   LSFT(KC_F13),   TO(0),          // Third row + large knob press
+    LCTL(KC_F17),   LCTL(KC_F18),   LCTL(KC_F19),   LCTL(KC_F13)                    // Fourth row
 ),
 /*
        ┌───┬───┬───┬───┐   ┌───┐ ┌───┐
@@ -155,10 +155,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #ifdef ENCODER_MAP_ENABLE
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][NUM_DIRECTIONS] = {
-    [_BASE] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_PGUP, KC_PGDN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_FN] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_PGUP, KC_PGDN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_FN1] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_PGUP, KC_PGDN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
-    [_FN2] = { ENCODER_CCW_CW(KC_UP, KC_DOWN), ENCODER_CCW_CW(KC_PGUP, KC_PGDN), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_BASE] = { ENCODER_CCW_CW(HYPR(KC_X), HYPR(KC_Y)), ENCODER_CCW_CW(HYPR(KC_S), HYPR(KC_T)), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_FN] = { ENCODER_CCW_CW(HYPR(KC_X), HYPR(KC_Y)), ENCODER_CCW_CW(HYPR(KC_S), HYPR(KC_T)), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_FN1] = { ENCODER_CCW_CW(HYPR(KC_X), HYPR(KC_Y)), ENCODER_CCW_CW(HYPR(KC_S), HYPR(KC_T)), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
+    [_FN2] = { ENCODER_CCW_CW(HYPR(KC_X), HYPR(KC_Y)), ENCODER_CCW_CW(HYPR(KC_S), HYPR(KC_T)), ENCODER_CCW_CW(KC_VOLD, KC_VOLU) },
 //    [_FN]   = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
 //    [_FN1]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
 //    [_FN2]  = { ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS), ENCODER_CCW_CW(KC_TRNS, KC_TRNS) },
