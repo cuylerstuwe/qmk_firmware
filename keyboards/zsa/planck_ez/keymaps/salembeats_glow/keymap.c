@@ -69,17 +69,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_LEFT_RAISE] = LAYOUT_planck_grid(
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NUHS, KC_NUBS, KC_PGUP, KC_PGDN, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+        _______,      _______,      LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LSFT(KC_F17), LSFT(KC_F18), LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), _______,      _______,
+        _______,      LSA(KC_F17),  LCA(KC_F17),  LCA(KC_F18),  LCA(KC_F19),  LSFT(KC_F19), LSFT(KC_F13), LCA(KC_F17),  LCA(KC_F18),  LCA(KC_F19),  LSA(KC_F18),  _______,
+        LCTL(KC_F17), LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F13), KC_F17,       KC_F18,       KC_F19,       KC_F13,       LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F13),
+        _______,      _______,      _______,      _______,      _______,      MEH(KC_F17),  MEH(KC_F17),  _______,      _______,      _______,      _______,      _______
 ),
 
 [_RIGHT_RAISE] = LAYOUT_planck_grid(
-    KC_GRV,  KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
-    KC_DEL,  KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
-    _______, KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,  KC_NUHS, KC_NUBS, KC_PGUP, KC_PGDN, _______,
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
+        _______,      _______,      LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), LSFT(KC_F17), LSFT(KC_F18), LGUI(KC_F17), LGUI(KC_F18), LGUI(KC_F19), _______,      _______,
+        _______,      LSA(KC_F17),  LCA(KC_F17),  LCA(KC_F18),  LCA(KC_F19),  LSFT(KC_F19), LSFT(KC_F13), LCA(KC_F17),  LCA(KC_F18),  LCA(KC_F19),  LSA(KC_F18),  _______,
+        LCTL(KC_F17), LCTL(KC_F18), LCTL(KC_F19), LCTL(KC_F13), KC_F17,       KC_F18,       KC_F19,       KC_F13,       LALT(KC_F17), LALT(KC_F18), LALT(KC_F19), LALT(KC_F13),
+        _______,      _______,      _______,      _______,      _______,      MEH(KC_F17),  MEH(KC_F17),  _______,      _______,      _______,      _______,      _______
 ),
 
 [_DOUBLE_LOWER] = LAYOUT_planck_grid(
@@ -90,10 +90,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [_DOUBLE_RAISE] = LAYOUT_planck_grid(
-        _______, RESET,   DEBUG,   RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
-        _______, _______, MU_MOD,  AU_ON,   AU_OFF,  AG_NORM, AG_SWAP, QWERTY,  _______,  _______, _______, _______,
-        _______, MUV_DE,  MUV_IN,  MU_ON,   MU_OFF,  MI_ON,   MI_OFF,  TERM_ON, TERM_OFF, _______, _______, _______,
-        _______, _______, _______, _______, _______, _______, _______, _______, _______,  _______, _______, _______
+        _______,      RESET,   DB_TOGG, RGB_TOG, RGB_MOD, RGB_HUI, RGB_HUD, RGB_SAI, RGB_SAD,  RGB_VAI, RGB_VAD, KC_DEL ,
+        _______,      _______, QK_MUSIC_TOGGLE, MU_ON,   MU_OFF,  AG_NORM, AG_SWAP, QWERTY,  _______,  _______, _______, _______,
+        _______,      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+        _______,      _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______
 ),
 
 [NAV_LAYER] = LAYOUT_planck_grid(
@@ -104,7 +104,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 ),
 
 [NUMPAD_LAYER] = LAYOUT_planck_grid(
-  _______, _______, _______, _______, _______, _______, KC_NLCK, KC_P7  , KC_P8  , KC_P9  , KC_PPLS, KC_PSLS,
+  _______, _______, _______, _______, _______, _______, KC_NUM, KC_P7  , KC_P8  , KC_P9  , KC_PPLS, KC_PSLS,
   _______, _______, _______, _______, _______, _______, _______, KC_P4  , KC_P5  , KC_P6  , KC_PPLS, KC_PAST,
   _______, _______, _______, _______, _______, _______, _______, KC_P1  , KC_P2  , KC_P3  , KC_PENT, KC_PMNS,
   _______, _______, _______, _______, _______, _______, _______, KC_P0  , KC_P0  , KC_PDOT, KC_PENT, KC_MUTE
@@ -119,7 +119,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 };
 
-uint32_t layer_state_set_user(uint32_t state) {
+layer_state_t layer_state_set_user(layer_state_t state) {
     state = update_tri_layer_state(state, _LEFT_LOWER, _RIGHT_LOWER, _DOUBLE_LOWER);
     state = update_tri_layer_state(state, _LEFT_RAISE, _RIGHT_RAISE, _DOUBLE_RAISE);
     return state;
@@ -130,7 +130,7 @@ void keyboard_post_init_user(void) {
   rgb_matrix_enable();
 }
 
-const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][10] = {
+const uint8_t PROGMEM ledmap[][RGB_MATRIX_LED_COUNT][10] = {
     [_QWERTY] = {
       {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0},
       {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0}, {0,0,0},
@@ -194,7 +194,7 @@ const uint8_t PROGMEM ledmap[][DRIVER_LED_TOTAL][10] = {
 };
 
 void set_layer_color(int layer) {
-  for (int i = 0; i < DRIVER_LED_TOTAL; i++) {
+  for (int i = 0; i < RGB_MATRIX_LED_COUNT; i++) {
     int r = pgm_read_byte(&ledmap[layer][i][0]);
     int g = pgm_read_byte(&ledmap[layer][i][1]);
     int b = pgm_read_byte(&ledmap[layer][i][2]);
@@ -202,45 +202,46 @@ void set_layer_color(int layer) {
   }
 }
 
-void rgb_matrix_indicators_user(void) {
-  if (keyboard_config.disable_layer_led) { return; }
-  switch (biton32(layer_state)) {
-    case _QWERTY:
+bool rgb_matrix_indicators_user(void) {
+    if (keyboard_config.disable_layer_led) { return true; }
+    switch (biton32(layer_state)) {
+      case _QWERTY:
+        set_layer_color(_QWERTY);
+        break;
+      case _LEFT_LOWER:
+        set_layer_color(_LEFT_LOWER);
+        break;
+      case _LEFT_RAISE:
+        set_layer_color(_LEFT_RAISE);
+        break;
+      case _RIGHT_LOWER:
+        set_layer_color(_RIGHT_LOWER);
+        break;
+      case _RIGHT_RAISE:
+        set_layer_color(_RIGHT_RAISE);
+        break;
+      case _DOUBLE_LOWER:
+        set_layer_color(_DOUBLE_LOWER);
+        break;
+      case _DOUBLE_RAISE:
+        set_layer_color(_DOUBLE_RAISE);
+        break;
+      case NAV_LAYER:
+        set_layer_color(NAV_LAYER);
+        break;
+      case NUMPAD_LAYER:
+        set_layer_color(NUMPAD_LAYER);
+        break;
+      case SYMBOL_LAYER:
+        set_layer_color(SYMBOL_LAYER);
+        break;
+     default:
       set_layer_color(_QWERTY);
+      if (rgb_matrix_get_flags() == LED_FLAG_NONE)
+        rgb_matrix_set_color_all(0, 0, 0);
       break;
-    case _LEFT_LOWER:
-      set_layer_color(_LEFT_LOWER);
-      break;
-    case _LEFT_RAISE:
-      set_layer_color(_LEFT_RAISE);
-      break;
-    case _RIGHT_LOWER:
-      set_layer_color(_RIGHT_LOWER);
-      break;
-    case _RIGHT_RAISE:
-      set_layer_color(_RIGHT_RAISE);
-      break;
-    case _DOUBLE_LOWER:
-      set_layer_color(_DOUBLE_LOWER);
-      break;
-    case _DOUBLE_RAISE:
-      set_layer_color(_DOUBLE_RAISE);
-      break;
-    case NAV_LAYER:
-      set_layer_color(NAV_LAYER);
-      break;
-    case NUMPAD_LAYER:
-      set_layer_color(NUMPAD_LAYER);
-      break;
-    case SYMBOL_LAYER:
-      set_layer_color(SYMBOL_LAYER);
-      break;
-   default:
-    set_layer_color(_QWERTY);
-    if (rgb_matrix_get_flags() == LED_FLAG_NONE)
-      rgb_matrix_set_color_all(0, 0, 0);
-    break;
-  }
+    }
+    return true;
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
