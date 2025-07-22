@@ -37,4 +37,7 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
-// #define TAPPING_TERM 300
+// Make layer tap keys more responsive
+#define TAPPING_TERM 64
+#define PERMISSIVE_HOLD
+#define RETRO_TAPPING
