@@ -18,6 +18,12 @@
 
 extern keymap_config_t keymap_config;
 
+// State tracking for hyper combo
+static bool left_lower_held = false;
+static bool right_lower_held = false;
+static bool symbol_mode_active = false;
+static bool hyper_combo_triggered = false;
+
 enum planck_layers {
   _QWERTY,
   _LEFT_LOWER,
@@ -34,6 +40,7 @@ enum planck_layers {
 enum planck_keycodes {
   QWERTY = SAFE_RANGE,
   SYMBOL_MODE,
+  HYPER_B,
 };
 
 #define LEFT_LOWER MO(_LEFT_LOWER)
@@ -144,11 +151,117 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     case SYMBOL_MODE:
       if (record->event.pressed) {
         layer_on(SYMBOL_LAYER);
+        symbol_mode_active = true;
+
+        // Check for hyper combo after activating symbol mode
+        // This handles the case where both lower keys are held first, then symbol mode
+        if (left_lower_held && right_lower_held && symbol_mode_active && !hyper_combo_triggered) {
+          // Emit hyper + b
+          register_code(KC_LCTL);
+          register_code(KC_LSFT);
+          register_code(KC_LALT);
+          register_code(KC_LGUI);
+          register_code(KC_B);
+          unregister_code(KC_B);
+          unregister_code(KC_LGUI);
+          unregister_code(KC_LALT);
+          unregister_code(KC_LSFT);
+          unregister_code(KC_LCTL);
+          hyper_combo_triggered = true;
+          return false;
+        }
       } else {
         layer_off(SYMBOL_LAYER);
+        symbol_mode_active = false;
+        hyper_combo_triggered = false;  // Reset when symbol mode is deactivated
+      }
+      return false;
+      break;
+    case LEFT_LOWER:
+      if (record->event.pressed) {
+        left_lower_held = true;
+
+        // Check for hyper combo after left lower is pressed
+        // This handles cases where symbol mode is active and right lower is already held
+        if (left_lower_held && right_lower_held && symbol_mode_active && !hyper_combo_triggered) {
+          // Emit hyper + b
+          register_code(KC_LCTL);
+          register_code(KC_LSFT);
+          register_code(KC_LALT);
+          register_code(KC_LGUI);
+          register_code(KC_B);
+          unregister_code(KC_B);
+          unregister_code(KC_LGUI);
+          unregister_code(KC_LALT);
+          unregister_code(KC_LSFT);
+          unregister_code(KC_LCTL);
+          hyper_combo_triggered = true;
+          return false;
+        }
+      } else {
+        left_lower_held = false;
+        hyper_combo_triggered = false;  // Reset when left lower is released
+      }
+      break;
+    case RIGHT_LOWER:
+      if (record->event.pressed) {
+        right_lower_held = true;
+
+        // Check for hyper combo after right lower is pressed
+        // This handles cases where symbol mode is active and left lower is already held
+        if (left_lower_held && right_lower_held && symbol_mode_active && !hyper_combo_triggered) {
+          // Emit hyper + b
+          register_code(KC_LCTL);
+          register_code(KC_LSFT);
+          register_code(KC_LALT);
+          register_code(KC_LGUI);
+          register_code(KC_B);
+          unregister_code(KC_B);
+          unregister_code(KC_LGUI);
+          unregister_code(KC_LALT);
+          unregister_code(KC_LSFT);
+          unregister_code(KC_LCTL);
+          hyper_combo_triggered = true;
+          return false;
+        }
+      } else {
+        right_lower_held = false;
+        hyper_combo_triggered = false;  // Reset when right lower is released
+      }
+      break;
+    case HYPER_B:
+      if (record->event.pressed) {
+        register_code(KC_LCTL);
+        register_code(KC_LSFT);
+        register_code(KC_LALT);
+        register_code(KC_LGUI);
+        register_code(KC_B);
+        unregister_code(KC_B);
+        unregister_code(KC_LGUI);
+        unregister_code(KC_LALT);
+        unregister_code(KC_LSFT);
+        unregister_code(KC_LCTL);
       }
       return false;
       break;
   }
+
+  // Check for hyper combo: both lowers held + symbol mode active
+  if (left_lower_held && right_lower_held && symbol_mode_active && !hyper_combo_triggered && record->event.pressed) {
+    // Emit hyper + b
+    register_code(KC_LCTL);
+    register_code(KC_LSFT);
+    register_code(KC_LALT);
+    register_code(KC_LGUI);
+    register_code(KC_B);
+    unregister_code(KC_B);
+    unregister_code(KC_LGUI);
+    unregister_code(KC_LALT);
+    unregister_code(KC_LSFT);
+    unregister_code(KC_LCTL);
+    hyper_combo_triggered = true;
+    return false;
+  }
+
   return true;
 }
